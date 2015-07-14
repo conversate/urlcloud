@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('f/{id}', 'FileController@show');
+
+Route::group(['prefix' => 'api'], function() {
+
+  Route::post('1/file/upload.json', 'ApiController@fileStore');
+  
+});
